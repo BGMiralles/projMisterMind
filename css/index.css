@@ -1,0 +1,121 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.firt-web {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  background-image: url(../img/image-w1280.webp);
+}
+
+.prin-fond {
+  position: relative;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.head-name {
+  height: 40%;
+  margin-left: 1em;
+  font-family: fantasy;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font: bold 300% curvise;
+  text-shadow: 5px 5px 5px red;
+}
+
+p {
+  font: bold 200% curvise;
+  text-shadow: 5px 5px 5px red;
+  font-family: fantasy;
+  color: white;
+}
+
+@media only screen and (min-width: 1200px) {
+  #saw-fondo {
+    object-fit: unset;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.cabecera {
+  height: 50%;
+}
+
+#level-content {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.level-text {
+  margin-left: 1em;
+}
+
+.dificultades {
+  height: 15em;
+  width: 70em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.btn-link {
+  margin: 0.4em;
+}
+
+.btn-link:hover {
+  transform: scale(1.2);
+}
+
+.Bottom {
+  display: flex;
+  justify-content: flex-end;
+  height: 5em;
+  width: 5em;
+  cursor: pointer;
+}
+
+.about {
+  font-family: fantasy;
+  background-color: red;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+}
+
+.parteBottom {
+  display: flex;
+  justify-content: center;
+  height: 5em;
+  width: 5em;
+  cursor: pointer;
+}

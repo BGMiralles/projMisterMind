@@ -1,0 +1,72 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #161414;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vh;
+}
+
+.conjuntoSelector {
+  max-width: 30em;
+  padding: 2em;
+  text-align: center;
+  
+}
+
+.selecciona {
+  margin-bottom: 1em;
+  color: white;
+  font-family: fantasy;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+  font-family: fantasy;
+  font: bold 200% cursive;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+}
+
+#select-button {
+  margin-left: 1.5em;
+  font-weight: bold;
+}
+
+#delete-button {
+  margin-left: 0.75em;
+  font-weight: bold;
+}
+
+.selected-color {
+  width: 4em;
+  height: 4em;
+  border: 1px solid black;
+}
+
+#selected-colors-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+.selected-color {
+  width: 2em;
+  height: 2em;
+  margin: 0.5em;
+  border: 1px solid black;
+}
+
+#muestraColor {
+  width: 100%;
+}
