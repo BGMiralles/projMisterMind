@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.paginaEntera {
+  height: 100vh;
+  max-width: 100%;
+  padding: 0;
+  background-image: url(../img/loser.jpg);
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 5px 5px 5px white;
+}
+
+.hueco{
+    height: 50%;
+}
+
+.fila {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+    color: red;
+  font-family: fantasy;
+  font: bold 200% cursive;
+}
+
+.volverAjugar {
+  background-color: red;
+  margin-top: 3em;
+  color: white;
+  font-family: fantasy;
+  font: bold cursive;
+}
