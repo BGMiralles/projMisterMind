@@ -72,3 +72,12 @@ a {
 #muestraColor {
   width: 100%;
 }
+
+#prueba {
+  width: 20em;
+  height: 20em;
+  background-color: white;
+  font: bold;
+  color: black;
+  display: flex;
+}

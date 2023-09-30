@@ -1,25 +1,48 @@
 const colorPicker = document.getElementById("color-picker");
 const colorPreview = document.getElementById("muestraColor");
+const namePicker = document.getElementById("nombreUsuario");
 const selectButton = document.getElementById("select-button");
 const selectedColorsContainer = document.getElementById(
   "selected-colors-container"
 );
 const deleteButton = document.getElementById("delete-button");
-const nombreUsuario = document.getElementById("nombreUsuario");
+const nombreUsuario = document.getElementById("prueba");
 const selectedColors = [];
+var userName = document.body.onload;
 
 colorPicker.addEventListener("change", changeColor);
 selectButton.addEventListener("click", handleSelect);
 deleteButton.addEventListener("click", handleDelete);
-
-nombreUsuario.addEventListener("input", () => {
-  sessionStorage.setItem("nombreUsuario", nombreUsuario.value);
+namePicker.addEventListener("input", () => {
+  sessionStorage.setItem("nombreUsuario", namePicker.value);
 });
 
-window.onload = function () {
-    var nombreAlmacenado = sessionStorage.getItem("nombreUsuario");
-    document.getElementById("nombreMostrado").textContent = nombreAlmacenado;
-  };
+if (namePicker.value.includes("")){
+  function userName() {
+    nombreUsuario.innerHTML = "";
+    console.log("1");
+    const newDiv = document.createElement("div");
+    newDiv.className = "prueba";
+    const name = document.createTextNode("hola");
+    newDiv.appendChild(name);
+    console.log("2");
+    const currentDiv = nombreUsuario;
+    document.body.appendChild(newDiv, currentDiv);
+    console.log("3");
+  }
+  userName()
+}
+
+function displaySelectedColors() {
+  selectedColorsContainer.innerHTML = "";
+
+  for (let i = 0; i < selectedColors.length; i++) {
+    const colorElement = document.createElement("div");
+    colorElement.style.backgroundColor = selectedColors[i];
+    colorElement.className = "selected-color";
+    selectedColorsContainer.appendChild(colorElement);
+  }
+}
 
 function changeColor() {
   const selectedColor = colorPicker.value;
@@ -92,3 +115,12 @@ function displaySelectedColors() {
     selectedColorsContainer.appendChild(colorElement);
   }
 }
+
+window.addEventListener("load", () => {
+  const storedColors = JSON.parse(sessionStorage.getItem("selectedColors"));
+
+  if (storedColors && storedColors.length > 0) {
+    selectedColors.push(...storedColors);
+    displaySelectedColors();
+  }
+});
