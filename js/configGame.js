@@ -51,3 +51,26 @@ function getMaximumColors(difficulty) {
   }
 }
 
+function isSelected(color) {
+  return selectedColors.includes(color);
+}
+
+function handleSelect() {
+  const selectedColor = colorPicker.value;
+  const difficulty = sessionStorage.getItem("difficulty");
+
+  if (
+    selectedColor &&
+    !isSelected(selectedColor) &&
+    selectedColors.length < getMaximumColors(difficulty)
+  ) {
+    selectedColors.push(selectedColor);
+    colorPicker.value = "";
+    displaySelectedColors();
+    if (selectedColors.length === getMaximumColors(difficulty)) {
+      selectButton.disabled = true;
+      sessionStorage.setItem("colores123456", JSON.stringify(selectedColors));
+      window.location.href = "../pages/game.html";
+    }
+  }
+}
