@@ -24,7 +24,7 @@
               <div class="level-text mb-3 game-text">
                 <p>ELIGE LA DIFULCUTAD DEL JUEGO:</p>
               </div>
-              <div class="d-flex flex-column game-text">
+              <div class="d-flex flex-column game-text" id="difil">
                 <a
                   href="./pages/configGame.html"
                   onclick="setDifficulty('facil')"
@@ -65,8 +65,8 @@
     ></script>
     <script>
       function setDifficulty(difficulty) {
-          localStorage.setItem("difficulty", difficulty);
+        sessionStorage.setItem("difficulty", difficulty);
       }
-  </script>
+    </script>
   </body>
 </html>
