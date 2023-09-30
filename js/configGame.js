@@ -74,3 +74,21 @@ function handleSelect() {
     }
   }
 }
+
+function handleDelete() {
+  if (selectedColors.length > 0) {
+    selectedColors.pop();
+    displaySelectedColors();
+    selectButton.disabled = false;
+  }
+}
+function displaySelectedColors() {
+  selectedColorsContainer.innerHTML = "";
+
+  for (let i = 0; i < selectedColors.length; i++) {
+    const colorElement = document.createElement("div");
+    colorElement.style.backgroundColor = selectedColors[i];
+    colorElement.className = "selected-color";
+    selectedColorsContainer.appendChild(colorElement);
+  }
+}
