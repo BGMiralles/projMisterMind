@@ -39,8 +39,19 @@ a {
   font: bold cursive;
 }
 
-.hueco{
-    height: 20em;
+.hueco {
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 15em;
+}
+
+#nombreMostrado {
+  color: white;
+  font-family: fantasy;
+  font: bold 400% cursive;
+  display: flex;
 }
 
 .volverAjugar {

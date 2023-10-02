@@ -17,21 +17,19 @@ body {
   text-shadow: 5px 5px 5px white;
 }
 
-.hueco{
-    height: 50%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-#nombreMostrado {
+.hueco {
+  height: 50%;
   align-items: center;
   justify-content: center;
   display: flex;
-  margin: 0;
-  padding: 0;
-  width: 30em;
-  height: 20em;
+  padding-top: 15em;
+}
+
+#nombreMostrado {
+  color: red;
+  font-family: fantasy;
+  font: bold 400% cursive;
+  display: flex;
 }
 
 .fila {
@@ -46,8 +44,8 @@ body {
   align-items: center;
 }
 
-h1{
-    color: red;
+h1 {
+  color: red;
   font-family: fantasy;
   font: bold 200% cursive;
 }

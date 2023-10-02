@@ -6,9 +6,8 @@ const selectedColorsContainer = document.getElementById(
   "selected-colors-container"
 );
 const deleteButton = document.getElementById("delete-button");
-const nombreUsuario = document.getElementById("prueba");
+
 const selectedColors = [];
-var userName = document.body.onload;
 
 colorPicker.addEventListener("change", changeColor);
 selectButton.addEventListener("click", handleSelect);
@@ -16,22 +15,6 @@ deleteButton.addEventListener("click", handleDelete);
 namePicker.addEventListener("input", () => {
   sessionStorage.setItem("nombreUsuario", namePicker.value);
 });
-
-if (namePicker.value.includes("")){
-  function userName() {
-    nombreUsuario.innerHTML = "";
-    console.log("1");
-    const newDiv = document.createElement("div");
-    newDiv.className = "prueba";
-    const name = document.createTextNode("hola");
-    newDiv.appendChild(name);
-    console.log("2");
-    const currentDiv = nombreUsuario;
-    document.body.appendChild(newDiv, currentDiv);
-    console.log("3");
-  }
-  userName()
-}
 
 function displaySelectedColors() {
   selectedColorsContainer.innerHTML = "";
@@ -82,6 +65,8 @@ function handleSelect() {
   const selectedColor = colorPicker.value;
   const difficulty = sessionStorage.getItem("difficulty");
 
+  window.location.href = "../pages/game.html";
+
   if (
     selectedColor &&
     !isSelected(selectedColor) &&
@@ -93,6 +78,10 @@ function handleSelect() {
     if (selectedColors.length === getMaximumColors(difficulty)) {
       selectButton.disabled = true;
       sessionStorage.setItem("colores123456", JSON.stringify(selectedColors));
+
+      console.log(localStorage.getItem("nombreUsuario"));
+      console.log(showName);
+      showName.innerText = localStorage.getItem("nombreUsuario")
       window.location.href = "../pages/game.html";
     }
   }
