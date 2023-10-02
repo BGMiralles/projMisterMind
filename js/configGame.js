@@ -65,23 +65,13 @@ function handleSelect() {
   const selectedColor = colorPicker.value;
   const difficulty = sessionStorage.getItem("difficulty");
 
-  window.location.href = "../pages/game.html";
-
-  if (
-    selectedColor &&
-    !isSelected(selectedColor) &&
-    selectedColors.length < getMaximumColors(difficulty)
-  ) {
+  if (selectedColor && !isSelected(selectedColor) && selectedColors.length < getMaximumColors(difficulty)) {
     selectedColors.push(selectedColor);
     colorPicker.value = "";
     displaySelectedColors();
     if (selectedColors.length === getMaximumColors(difficulty)) {
       selectButton.disabled = true;
       sessionStorage.setItem("colores123456", JSON.stringify(selectedColors));
-
-      console.log(localStorage.getItem("nombreUsuario"));
-      console.log(showName);
-      showName.innerText = localStorage.getItem("nombreUsuario")
       window.location.href = "../pages/game.html";
     }
   }
