@@ -46,3 +46,14 @@ botones.forEach((boton) => {
   });
 });
 
+const botonBorrar = document.querySelector(".borrar");
+
+botonBorrar.addEventListener("click", () => {
+  if (elementosPintados.size > 0) {
+    const ultimoElementoPintado = elementosFilaActual[indiceElementoActual - 1];
+    ultimoElementoPintado.style.backgroundColor = "";
+
+    elementosPintados.delete(ultimoElementoPintado);
+    indiceElementoActual--;
+  }
+});
