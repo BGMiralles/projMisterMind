@@ -57,3 +57,10 @@ botonBorrar.addEventListener("click", () => {
     indiceElementoActual--;
   }
 });
+
+function bloquearFilaActual() {
+  const elementosFila = document.querySelectorAll(`.fila-${filaActual}`);
+  elementosFila.forEach(elemento => {
+    elemento.style.pointerEvents = 'none';
+  });
+}
