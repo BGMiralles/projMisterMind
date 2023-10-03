@@ -64,3 +64,12 @@ function bloquearFilaActual() {
     elemento.style.pointerEvents = 'none';
   });
 }
+
+function pasarSiguienteFila() {
+  filaActual++;
+  const filasOcultas = difficulty === 'dificil' ? 4 : (difficulty === 'intermedio' ? 2 : 0);
+  const maxFilasVisible = maxFilas - filasOcultas;
+  if (filaActual > maxFilasVisible) {
+    window.location.href = '../pages/loser.html';
+    return;
+  }}
