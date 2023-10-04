@@ -81,3 +81,28 @@ function pasarSiguienteFila() {
 
   indiceElementoActual = 0; 
 }
+
+function compararCombinacion() {
+  const fila = document.querySelectorAll(`.fila-${filaActual}`);
+  const coloresFila = Array.from(fila).map(elemento => elemento.style.backgroundColor);
+  const coloresSecretos = coloresSecretosHTMLElementsArray.map(elemento => elemento.style.backgroundColor);
+
+  let coincidenColoresPosicion = 0;
+  let coincidenColores = 0;
+
+  for (let i = 0; i < coloresFila.length; i++) {
+    if (coloresFila[i] === coloresSecretos[i]) {
+      coincidenColoresPosicion++;
+      document.getElementsByClassName(`dots-fila-${filaActual}`)[i].style.backgroundColor = 'black'; 
+    } else if (coloresSecretos.includes(coloresFila[i])) {
+      coincidenColores++;
+      document.getElementsByClassName(`dots-fila-${filaActual}`)[i].style.backgroundColor = 'white';
+    }
+  }
+
+  if (coincidenColoresPosicion === coloresFila.length) {
+    window.location.href = 'winner.html';
+  } else {
+    console.log('La combinacion no es correcta.');
+  }
+}
