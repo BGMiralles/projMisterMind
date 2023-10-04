@@ -72,4 +72,12 @@ function pasarSiguienteFila() {
   if (filaActual > maxFilasVisible) {
     window.location.href = '../pages/loser.html';
     return;
-  }}
+  }
+
+  elementosFilaActual = document.querySelectorAll(`.fila-${filaActual}`);
+  elementosFilaActual.forEach(elemento => {
+    elemento.style.pointerEvents = 'auto'; 
+  });
+
+  indiceElementoActual = 0; 
+}
