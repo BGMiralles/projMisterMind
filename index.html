@@ -15,12 +15,7 @@
   <body>
     <div class="container-fluid firt-web d-flex flex-column">
       <div class="content">
-        <audio
-            src="./audio/saw-f.mp3"
-            type="audio/mp3"
-            autoplay
-            loop
-          ></audio>
+        <audio id="audioPlayer" src="./audio/saw-f.mp3" type="audio/mp3" loop></audio>
         <div class="head-name">
           <p>EL JUEGO DE SAW MIND</p>
         </div>
@@ -74,5 +69,15 @@
         sessionStorage.setItem("difficulty", difficulty);
       }
     </script>
+    <script>
+      let audioPlayer = document.getElementById('audioPlayer');
+
+      function startAudio() {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+        }
+      }
+    </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

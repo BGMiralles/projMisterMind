@@ -106,3 +106,14 @@ function compararCombinacion() {
     console.log('La combinacion no es correcta.');
   }
 }
+
+document.querySelector('#aceptar1').addEventListener('click', () => {
+  if (indiceElementoActual === elementosFilaActual.length) {
+    compararCombinacion();
+    bloquearFilaActual();
+    pasarSiguienteFila();
+  } else {
+  }
+});
+
+const difficulty = sessionStorage.getItem('difficulty');
