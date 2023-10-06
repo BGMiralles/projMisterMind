@@ -1,14 +1,8 @@
 let filaActual = 1;
 const maxFilas = 10;
-const difficulty = sessionStorage.getItem("difficulty");
+
 let colores = JSON.parse(sessionStorage.getItem("colores123456"));
 let combinacionSecreta = [];
-const coloresSeleccionados = document.querySelectorAll(".color-seleccionado");
-const botones = document.querySelectorAll(".color-seleccionado");
-let elementosFilaActual = document.querySelectorAll(`.fila-${filaActual}`);
-const elementosPintados = new Set();
-let indiceElementoActual = 0;
-const botonBorrar = document.querySelector(".borrar");
 
 for (let i = 0; i < colores.length; i++) {
   let randomIndex = Math.floor(Math.random() * colores.length);
@@ -23,9 +17,15 @@ coloresSecretosHTMLElementsArray.forEach((spanColor, index) => {
   spanColor.style.backgroundColor = combinacionSecreta[index];
 });
 
+const coloresSeleccionados = document.querySelectorAll(".color-seleccionado");
 coloresSeleccionados.forEach((spanColor, index) => {
   spanColor.style.backgroundColor = colores[index];
 });
+
+const botones = document.querySelectorAll(".color-seleccionado");
+let elementosFilaActual = document.querySelectorAll(`.fila-${filaActual}`);
+const elementosPintados = new Set();
+let indiceElementoActual = 0;
 
 botones.forEach((boton) => {
   boton.addEventListener("click", () => {
@@ -45,6 +45,8 @@ botones.forEach((boton) => {
     }
   });
 });
+
+const botonBorrar = document.querySelector(".borrar");
 
 botonBorrar.addEventListener("click", () => {
   if (elementosPintados.size > 0) {
@@ -122,6 +124,8 @@ document.querySelector("#aceptar1").addEventListener("click", () => {
   } else {
   }
 });
+
+const difficulty = sessionStorage.getItem("difficulty");
 
 if (difficulty === "facil") {
 } else if (difficulty === "intermedio") {
