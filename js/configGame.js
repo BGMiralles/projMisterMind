@@ -36,7 +36,8 @@ function changeColor() {
   if (
     selectedColor &&
     !isSelected(selectedColor) &&
-    selectedColors.length < getMaximumColors(difficulty)
+    selectedColors.length < getMaximumColors(difficulty) &&
+    namePicker.value !== ""
   ) {
     selectButton.disabled = false;
   } else {
@@ -65,7 +66,11 @@ function handleSelect() {
   const selectedColor = colorPicker.value;
   const difficulty = sessionStorage.getItem("difficulty");
 
-  if (selectedColor && !isSelected(selectedColor) && selectedColors.length < getMaximumColors(difficulty)) {
+  if (
+    selectedColor &&
+    !isSelected(selectedColor) &&
+    selectedColors.length < getMaximumColors(difficulty)
+  ) {
     selectedColors.push(selectedColor);
     colorPicker.value = "";
     displaySelectedColors();
@@ -95,6 +100,10 @@ function displaySelectedColors() {
   }
 }
 
+const showName = document.getElementById("numeroColores");
+const selectedDiff = sessionStorage.getItem("difficulty")
+showName.innerText = `SELECCIONA LOS ${getMaximumColors(selectedDiff)} COLORES`
+
 window.addEventListener("load", () => {
   const storedColors = JSON.parse(sessionStorage.getItem("selectedColors"));
 
@@ -103,4 +112,3 @@ window.addEventListener("load", () => {
     displaySelectedColors();
   }
 });
-

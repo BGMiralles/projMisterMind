@@ -30,7 +30,8 @@ body {
   font-weight: bold;
 }
 
-a {
+a,
+.selecciona {
   color: white;
   font-family: fantasy;
   font: bold 200% cursive;
