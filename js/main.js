@@ -20,6 +20,9 @@ coloresSecretosHTMLElementsArray.forEach((spanColor, index) => {
 const coloresSeleccionados = document.querySelectorAll(".color-seleccionado");
 coloresSeleccionados.forEach((spanColor, index) => {
   spanColor.style.backgroundColor = colores[index];
+  if(spanColor.style.backgroundColor === ""){
+    spanColor.style.pointerEvents = "none"
+  }
 });
 
 const botones = document.querySelectorAll(".color-seleccionado");
